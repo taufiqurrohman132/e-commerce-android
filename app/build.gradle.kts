@@ -5,6 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
     id("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -52,6 +53,10 @@ dependencies {
 
     // hilt
     implementation("com.google.dagger:hilt-android:2.57.1")
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
     ksp("com.google.dagger:hilt-android-compiler:2.57.1")
 
     // loadigng button
@@ -65,6 +70,9 @@ dependencies {
 
     // step view
     implementation("com.github.shuhart:stepview:1.5.1")
+
+    // dimen
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
 
     // nav fragment
     implementation("androidx.navigation:navigation-fragment:2.9.6")
